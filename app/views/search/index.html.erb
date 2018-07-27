@@ -1,8 +1,8 @@
-All stores within 25 miles of 80202
-14 Total Stores
+All stores within 25 miles of <%= params[:search] %></br>
+<%= @total %> Total Stores
 <% @stores.each do |store| %>
 <div class="store">
-  <h3 class='name'><%= store.name %></h3>
+  <h3 class='name'><%= store.name %></h3><br>
   <ul>
     <li class='city'><%= store.city %></li>
     <li class='distance'><%= store.distance %></li>

@@ -10,14 +10,19 @@ class BestBuyService
   end
 
   def find_stores
-    get_url("/v1/stores(area(#{zip},25))?format=json&show=name,city,PostalCode,storeType,phone,storeType&apiKey=#{ENV['API_KEY']}")
+    get_url("/v1/stores(area(#{zip},25))?format=json&show=name,city,PostalCode,storeType,phone,storeType&pageSize=10&cursorMark=*&apiKey=#{ENV['API_KEY']}")
   end
 
   def store_data
-    find_stores[:stores].first(10)
+    find_stores[:stores]
   end
 
+  def total_stores
+    find_stores[:total]
+  end
 
+  private
+  
   def get_url(url)
     response = @conn.get(url)
     JSON.parse(response.body, symbolize_names: true)

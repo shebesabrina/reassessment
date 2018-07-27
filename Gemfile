@@ -48,3 +48,6 @@ gem "figaro", "~> 1.1"
 
 # Added at 2018-07-27 09:13:22 -0600 by sabrinarobinson:
 gem "active_model_serializers", "~> 0.10.7"
+
+# Added at 2018-07-27 11:06:13 -0600 by sabrinarobinson:
+gem "will_paginate", "~> 3.1"
