@@ -1,6 +1,7 @@
 class StorePresenter
-  def initialize(zip, radius)
-    @service = BestBuyService.new(zip, radius)
+  def initialize(zip)
+    # binding.pry
+    @service = BestBuyService.new(zip)
   end
 
   def first_stores

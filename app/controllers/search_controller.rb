@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @stores = StorePresenter.new(80202, 25)
+    # binding.pry
+    @stores = StorePresenter.new(params[:search])
   end
 end
