@@ -33,3 +33,18 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Added at 2018-07-26 20:06:06 -0600 by sabrinarobinson:
+gem "factory_bot_rails", "~> 4.10"
+
+# Added at 2018-07-26 20:08:58 -0600 by sabrinarobinson:
+gem "launchy", "~> 2.4"
+
+# Added at 2018-07-26 20:09:10 -0600 by sabrinarobinson:
+gem "faraday", "~> 0.15.2"
+
+# Added at 2018-07-26 20:10:01 -0600 by sabrinarobinson:
+gem "figaro", "~> 1.1"
+
+# Added at 2018-07-27 09:13:22 -0600 by sabrinarobinson:
+gem "active_model_serializers", "~> 0.10.7"
