@@ -1,4 +1,7 @@
 class BestBuyService
+
+  attr_reader :zip, :radius
+
   def initialize(zip, radius)
     @zip = zip
     @radius = radius
@@ -8,7 +11,11 @@ class BestBuyService
   end
 
   def find_stores
-    response = @conn.get("/stores(area(#{zip},#{radius}))?format=json&show=storeId,storeType,name,city,region&apiKey=ENV['API_KEY']")
-    JSON.parse(response.body, symbolize_names: true)[:results]
+    get_url("/v1/stores(area(#{zip},#{radius}))?format=json&show=storeId,storeType,name,city,region&apiKey=#{ENV['API_KEY']}")
+  end
+
+  def get_url(url)
+    response = @conn.get(url)
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
