@@ -11,8 +11,13 @@ class BestBuyService
   end
 
   def find_stores
-    get_url("/v1/stores(area(#{zip},#{radius}))?format=json&show=storeId,storeType,name,city,region&apiKey=#{ENV['API_KEY']}")
+    get_url("/v1/stores(area(#{zip},#{radius}))?format=json&show=name,city,PostalCode,storeType,phone,storeType&apiKey=#{ENV['API_KEY']}")
   end
+
+  def store_data
+    find_stores[:stores].first(10)
+  end
+
 
   def get_url(url)
     response = @conn.get(url)

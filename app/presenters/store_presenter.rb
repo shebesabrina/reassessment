@@ -1,4 +1,9 @@
 class StorePresenter
-  def initialize
+  def initialize(zip, radius)
+    @service = BestBuyService.new(zip, radius)
+  end
+
+  def first_stores
+    @service.store_data
   end
 end
