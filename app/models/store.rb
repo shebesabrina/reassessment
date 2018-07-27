@@ -13,14 +13,15 @@ class Store
   end
 
   def self.find_nearby_stores(zip)
+    # binding.pry
     raw_data = BestBuyService.new(zip).store_data
     raw_data.map do |data|
-      binding.pry
       Store.new(
         name: data[:name],
         city: data[:city],
-        distance: data[:],
-        phone: data[:storeType]
+        distance: data[:postalCode],
+        phone: data[:phone],
+        type: data[:storeType]
       )
     end
   end

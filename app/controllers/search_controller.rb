@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
     # binding.pry
-    @stores = StorePresenter.new(params[:search])
+    @stores = Store.find_nearby_stores(params[:search])
+    # @stores = StorePresenter.new(params[:search])
   end
 end

@@ -1,2 +1,13 @@
 All stores within 25 miles of 80202
-<%= @stores.count %> Total Stores
+14 Total Stores
+<% @stores.each do |store| %>
+<div class="store">
+  <h3 class='name'><%= store.name %></h3>
+  <ul>
+    <li class='city'><%= store.city %></li>
+    <li class='distance'><%= store.distance %></li>
+    <li class='phone'><%= store.phone %></li>
+    <li class='store-type'><%= store.type %></li>
+  </ul>
+</div>
+<% end %>
